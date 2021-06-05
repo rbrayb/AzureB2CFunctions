@@ -1,2 +1,2 @@
 # AzureB2CFunctions
-Utility functions for Azure Ad B2C
+Utility functions for Azure AD B2C
