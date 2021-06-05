@@ -1,6 +1,6 @@
 # AzureB2CFunctions
 
-Utility functions for Azure AD B2C.
+Utility REST API functions for Azure AD B2C.
 
 Note: PoC - not Production ready - use at own risk!
 
