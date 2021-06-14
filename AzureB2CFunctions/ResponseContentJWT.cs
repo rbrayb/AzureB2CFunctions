@@ -12,7 +12,7 @@ namespace AzureB2CFunctions
             this.givenName = "Joe";
             this.surName = "Bloggs";
             this.role = "Admin";
-            this.objectID = "83a7d054-7129-4d11-9403-53bbccbb7f19";
+            this.objectId = "83a7d054-7129-4d11-9403-53bbccbb7f19";
         }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -28,7 +28,7 @@ namespace AzureB2CFunctions
         public string role { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string objectID { get; set; }
+        public string objectId { get; set; }
 
     }
 }
