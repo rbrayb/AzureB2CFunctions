@@ -13,7 +13,7 @@ namespace AzureB2CFunctions
         [FunctionName("RepositoryAuth")]
         [Produces("text/html")]
 
-        public static async Task<IActionResult> Run(
+        public static ActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
