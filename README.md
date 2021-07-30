@@ -11,5 +11,6 @@ Note: PoC - not Production ready - use at own risk!
 * Multiply - Multiply two ints
 * Divide - Divide two ints
 * DisplayName - Join first name and last name = display name (concatenate two strings)
+* NullOrEmpty - CHecks if claim is null or empty
 * RepositoryAuth - Authenticate against another repository
 
