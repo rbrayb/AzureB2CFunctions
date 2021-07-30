@@ -13,4 +13,6 @@ Note: PoC - not Production ready - use at own risk!
 * DisplayName - Join first name and last name = display name (concatenate two strings)
 * NullOrEmpty - Checks if claim is null or empty
 * RepositoryAuth - Authenticate against another repository
+* SignUpValidation - Example of checking basic authentication
+
 
