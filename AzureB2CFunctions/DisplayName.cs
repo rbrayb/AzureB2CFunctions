@@ -8,24 +8,25 @@ using Microsoft.Extensions.Logging;
 
 namespace AzureB2CFunctions
 {
-    public static class DateConvert
+    public static class DisplayName
     {
-        [FunctionName("DateConvert")]
+        [FunctionName("DisplayName")]
         [Produces("text/html")]
 
-        // public static async Task<IActionResult> Run(
         public static ActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            DateTime dt;
-            string dateString;
+            string name1 = "";
+            string name2 = "";
+            string result = "";
 
             try
             {
-                dateString = req.Form["dateString"];
+                name1 = req.Form["givenName"];
+                name2 = req.Form["surname"];
 
-                dt = Convert.ToDateTime(dateString);
+                result = name1 + " " + name2;
             }
 
             catch (Exception ex)
@@ -33,7 +34,7 @@ namespace AzureB2CFunctions
                 return (ActionResult)new BadRequestObjectResult(new ResponseContent(ex.ToString(), 409));
             }
 
-            return (ActionResult)new OkObjectResult(new ResponseContentDate(dt));
+            return (ActionResult)new OkObjectResult(new ResponseContentString(result));
         }
     }
 }

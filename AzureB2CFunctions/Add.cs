@@ -18,7 +18,7 @@ namespace AzureB2CFunctions
         [FunctionName("Add")]
         [Produces("application/json")]
 
-        public static async Task<IActionResult> Run(
+        public static ActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {

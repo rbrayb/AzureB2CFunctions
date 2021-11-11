@@ -8,24 +8,24 @@ using Microsoft.Extensions.Logging;
 
 namespace AzureB2CFunctions
 {
-    public static class DateConvert
+    public static class NullOrEmpty
     {
-        [FunctionName("DateConvert")]
+        [FunctionName("NullOrEmpty")]
         [Produces("text/html")]
 
-        // public static async Task<IActionResult> Run(
         public static ActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            DateTime dt;
-            string dateString;
+            string name1 = "";           
+            bool result = false;
 
             try
             {
-                dateString = req.Form["dateString"];
+                name1 = req.Form["claimName"];
 
-                dt = Convert.ToDateTime(dateString);
+                if (String.IsNullOrEmpty(name1))
+                    result = true;
             }
 
             catch (Exception ex)
@@ -33,7 +33,7 @@ namespace AzureB2CFunctions
                 return (ActionResult)new BadRequestObjectResult(new ResponseContent(ex.ToString(), 409));
             }
 
-            return (ActionResult)new OkObjectResult(new ResponseContentDate(dt));
+            return (ActionResult)new OkObjectResult(new ResponseContentBool(result));
         }
     }
 }

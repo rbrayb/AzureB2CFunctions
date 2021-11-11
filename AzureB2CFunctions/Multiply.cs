@@ -13,7 +13,7 @@ namespace AzureB2CFunctions
         [FunctionName("Multiply")]
         //[Produces("text/html")]
 
-        public static async Task<IActionResult> Run(
+        public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
