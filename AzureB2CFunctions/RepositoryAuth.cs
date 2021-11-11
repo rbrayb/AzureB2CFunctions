@@ -22,8 +22,8 @@ namespace AzureB2CFunctions
 
             try
             {
-                userName = req.Form["userName"];
-                password = req.Form["password"];               
+                userName = req.Query["userName"];
+                password = req.Query["password"];               
             }
 
             catch (Exception ex)
