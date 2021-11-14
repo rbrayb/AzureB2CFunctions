@@ -28,6 +28,13 @@ namespace AzureB2CFunctions
             
             try
             {
+                if (String.IsNullOrEmpty(req.Query["num1"]))
+                    return (ActionResult)new ConflictObjectResult(new ResponseContent("Command is num1, num2, comparison (must be eq/lt/gt)", 409));
+                 if (String.IsNullOrEmpty(req.Query["num2"]))
+                    return (ActionResult)new ConflictObjectResult(new ResponseContent("Command is num1, num2, comparison (must be eq/lt/gt)", 409));
+                if (String.IsNullOrEmpty(req.Query["comparison"]))
+                    return (ActionResult)new ConflictObjectResult(new ResponseContent("Command is num1, num2, comparison (must be eq/lt/gt)", 409));
+
                 num1 = req.Query["num1"];
                 num2 = req.Query["num2"];
                 comparison = req.Query["comparison"];
